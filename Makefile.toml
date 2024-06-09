@@ -1,0 +1,27 @@
+# project tasks 
+[tasks.app-run]
+command = "cargo"
+args = ["run"]
+
+[tasks.clippy]
+install_crate = "cargo-clippy"
+command = "cargo"
+args = ["clippy"]
+
+[tasks.format]
+clear = true 
+install_crate = "rustfmt"
+command = "cargo"
+args = ["fmt", "--all", "--", "--check"]
+
+[tasks.api-call]
+script_runner = "@shell"
+script = '''
+chmod u+x api_call.sh && ./api_call.sh 20
+'''
+
+[tasks.run-docker]
+script_runner = "@shell"
+script = '''
+docker compose up -d
+'''

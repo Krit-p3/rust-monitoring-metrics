@@ -1,9 +1,8 @@
 use actix_web::{get, App, HttpServer, HttpResponse, Responder};
 use rand::{Rng, thread_rng};
-use actix_web_prometheus::{PrometheusMetrics, PrometheusMetricsBuilder};
+use actix_web_prometheus::PrometheusMetricsBuilder;
 use std::collections::HashMap;
 use tracing::{info,warn,error};
-use tracing_subscriber;
 use tracing_actix_web::TracingLogger;
 
 #[get("/")]
